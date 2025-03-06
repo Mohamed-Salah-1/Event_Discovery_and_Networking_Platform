@@ -89,11 +89,11 @@ footer {
 }
 
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    background: linear-gradient(rgba(212, 19, 19, 0.5), rgba(0, 0, 0, 0.5)), 
                url('https://source.unsplash.com/1600x400/?events,meetups') no-repeat center center;
     background-size: cover;
     color: white;
-    padding: 120px 0;
+    padding: 50px 0;
 }
 .feature-box {
     padding: 30px;

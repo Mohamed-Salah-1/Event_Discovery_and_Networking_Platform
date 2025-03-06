@@ -1,5 +1,8 @@
 /* style.css */
 body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -18,47 +21,30 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: space-around;
 }
 
 nav li {
-    display: inline-block;
-    margin-right: 10px;
+    position: relative;
 }
 
 nav a {
     color: #333;
     text-decoration: none;
-}
-
-.event-discovery {
-    padding: 20px;
-}
-
-.event-discovery form {
-    margin-bottom: 20px;
-}
-
-.event-discovery label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.event-discovery select,
-.event-discovery input[type="date"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
+    padding: 10px 20px;
     border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
-.event-discovery button {
+nav a:hover {
     background-color: #4CAF50;
     color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+}
+
+nav a.active {
+    background-color: #4CAF50;
+    color: white;
 }
 
 .recommendations {
@@ -100,4 +86,25 @@ footer {
     background-color: #f2f2f2;
     padding: 20px;
     text-align: center;
+}
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+               url('https://source.unsplash.com/1600x400/?events,meetups') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 120px 0;
+}
+.feature-box {
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+.feature-box:hover {
+    transform: translateY(-5px);
+}
+.footer-bg {
+    background-color: #343a40;
+    color: white;
 }

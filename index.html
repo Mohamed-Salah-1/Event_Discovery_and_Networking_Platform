@@ -7,67 +7,241 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <h1>Event Discovery</h1>
-        <nav>
-            <ul class="nav nav-tabs>
-                <li class="nav-item"><a class="nav-link" href="index.html" >Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
-                <li class="nav-item"><a class="nav-link" href="networking.html">Networking</a></li>
-                <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
-            </ul>
-        </nav>
-        <div class="welcome-message">
-            <span>Welcome, {username}</span>
-        </div>
-    </header>
-    <main>
-        <section class="event-discovery">
-            <h2>Discover Events</h2>
-            <form>
-                <label for="location">Location:</label>
-                <select name="location" id="location">
-                    <option value="">Select a location</option>
-                    <option value="Riyadh">Riyadh</option>
-                    <option value="Jeddah">Jeddah</option>
-                    <option value="Dammam">Dammam</option>
-                    <option value="Taif">Taif</option>
-                    <option value="Yanbua">Yanbua</option>
-                    <option value="Abha">Abha</option>
-                    <option value="Hail">Hail</option>
-                    <option value="Najran">Najran</option>
-                </select>
-                
-                <label for="interest">Interest:</label>
-                <select id="interest" name="interest">
-                    <option value="">Select an interest</option>
-                    <option value="technology">Technology</option>
-                    <option value="business">Business</option>
-                    <option value="arts">Arts</option>
-                    <option value="education">Education</option>
-                    <option value="riyadh_season">Riyadh Season</option>
-                </select>
-                <label for="date">Date:</label>
-                <input type="date" id="date" name="date">
-                <button type="submit">Search</button>
-            </form>
-        </section>
-        <h2>Recommendations</h2>
-        <!-- ----------------------------------------------------------------------------------------- -->
-        <section class="recommendations">
-        
-            <div class="card">
-                <a href="events.html#ai discovery"><img src="images/ai discovery.jpg" alt="ai discovery"></a>
-                <h3>Arab Music Concert</h3>
-                <p>Date: 04/01/2023</p>
-                <p>Location: Jeddah</p>
-                
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Event Discovery</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="networking.html">Networking</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.html">Feedback</a>
+                    </li>
+                </ul>
             </div>
-            
-        </section>
-        <!-- ----------------------------------------------------------------------------------------- -->
-    </main>
-    <footer>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container text-center">
+            <h1 class="display-4 mb-4">Discover Your Next Event</h1>
+            <p class="lead fw-light">Find exciting events, conferences, and meetups tailored to your interests</p>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="introduction py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Welcome to Event Discovery</h2>
+            <p class="lead text-center">
+                Event Discovery is your one-stop platform for discovering exciting events, conferences, and meetups tailored to your interests. Whether you're into technology, business, arts, education, sports, theater, or dining, we've got you covered.
+            </p>
+            <p class="text-center">
+                Our platform connects you with local event organizers and fellow attendees, making it easy to find and join events that matter to you. Stay up-to-date with the latest happenings in your city and beyond!
+            </p>
+        </div>
+    </section>
+    <h2 class="text-center mb-4">Featured Events</h2>
+
+    <!-- Featured Events Section -->
+    <section class="featured-events py-5">
+        <div class="container">
+            <!-- <h2 class="text-center mb-4">Featured Events</h2> -->
+            <div class="row gy-4">
+                <!-- Event 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="images/Riyadh Racing Season Race Night.jpg" alt="Featured Event 1" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Riyadh Racing Season Race Night</h5>
+                            <p class="card-text">
+                                <strong>Date:</strong> 13/03/2025<br>
+                                <strong>Location:</strong> Riyadh<br>
+                                <strong>Description:</strong> A race night at King Abdulaziz Racecourse
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Event 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="images/Arab Music Concert.jpg" alt="Arab Music Concert" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Featured Event 2 Title</h5>
+                            <p class="card-text">
+                                <strong>Date:</strong> 02/01/2025<br>
+                                <strong>Location:</strong> Jeddah<br>
+                                <strong>Description:</strong> Another featured event description.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">What Our Users Say</h2>
+            <div class="row gy-4">
+                <!-- Testimonial 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <p class="card-text">
+                                "Event Discovery has been a game-changer for me. I've discovered so many amazing events that I would have never known about otherwise."
+                            </p>
+                            <footer class="blockquote-footer mt-3">
+                                <cite title="Source Title">Rana</cite>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <p class="card-text">
+                                "The platform is user-friendly and provides a wide range of events. Highly recommend!"
+                            </p>
+                            <footer class="blockquote-footer mt-3">
+                                <cite title="Source Title">Khalid</cite>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <p class="card-text">
+                                "I love how easy it is to filter events by location and interest. It's made my social life much more interesting!"
+                            </p>
+                            <footer class="blockquote-footer mt-3">
+                                <cite title="Source Title">Abdullah</cite>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Discovery Section -->
+    <section class="event-discovery py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Discover Events</h2>
+            <form class="row g-3">
+                <div class="col-md-4">
+                    <label for="location" class="form-label">Location:</label>
+                    <select name="location" id="location" class="form-select">
+                        <option value="">Select a location</option>
+                        <option value="Riyadh">Riyadh</option>
+                        <option value="Jeddah">Jeddah</option>
+                        <option value="Dammam">Dammam</option>
+                        <option value="Taif">Taif</option>
+                        <option value="Yanbua">Yanbua</option>
+                        <option value="Abha">Abha</option>
+                        <option value="Hail">Hail</option>
+                        <option value="Najran">Najran</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="interest" class="form-label">Interest:</label>
+                    <select id="interest" name="interest" class="form-select">
+                        <option value="">Select an interest</option>
+                        <option value="technology">Technology</option>
+                        <option value="business">Business</option>
+                        <option value="arts">Arts</option>
+                        <option value="education">Education</option>
+                        <option value="riyadh_season">Riyadh Season</option>
+                        <option value="Diriyah_season">Diriyah Season</option>
+                        <option value="sport">Sport Events</option>
+                        <option value="Theater">Theater & Performing Arts</option>
+                        <option value="Restaurants">Restaurants</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="date" class="form-label">Date:</label>
+                    <input type="date" id="date" name="date" class="form-control">
+                </div>
+                <div class="col-12 text-center mt-3">
+                    <button type="submit" class="btn btn-success">Search</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Recommendations Section -->
+    <section class="recommendations py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Recommended Events</h2>
+            <div class="row gy-4">
+                <!-- Event 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="images\ai discovery.jpg" alt="Ai Discovery Conference" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Ai Discovery Conference</h5>
+                            <p class="card-text">
+                                <strong>Date:</strong> 04/04/2025<br>
+                                <strong>Location:</strong> Jeddah<br>
+                                <strong>Description:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Event 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="images/Saudi_Arabian_Grand_Prix_2025.jpg" alt="Saudi Arabian Grand Prix 2025" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Saudi Arabian Grand Prix 2025</h5>
+                            <p class="card-text">
+                                <strong>Date:</strong> 18/04/2025<br>
+                                <strong>Location:</strong> Riyadh<br>
+                                <strong>Description:</strong> Excitement is growing as the Kingdom gears up to host the Saudi Arabian Grand Prix. But not just any race.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Event 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100">
+                        <img src="images\Riyadh Racing Season Race Night.jpg" alt="Riyadh Racing Season Race Night" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Riyadh Racing Season Race Night</h5>
+                            <p class="card-text">
+                                <strong>Date:</strong> 13/03/2025<br>
+                                <strong>Location:</strong> Riyadh<br>
+                                <strong>Description:</strong> A race night at King Abdulaziz Racecourse is an evening like no other...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+               
+                
+                <!-- Add more events as needed -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-light text-center py-3">
         <p>&copy; 2025 Event Discovery. All rights reserved.</p>
     </footer>
 </body>

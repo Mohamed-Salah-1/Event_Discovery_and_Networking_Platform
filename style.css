@@ -47,11 +47,16 @@ nav a.active {
     color: white;
 }
 
-.recommendations {
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+               url('images/background.avif') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 50px 0;
+}
+
+.events-list {
     padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
 }
 
 .card {
@@ -60,50 +65,24 @@ nav a.active {
     border-radius: 8px;
     overflow: hidden;
     max-width: 300px;
+    height: 100%;
 }
 
 .card img {
     width: 100%;
     height: auto;
+    object-fit: cover;
+    max-height: 200px;
 }
 
-.card-content {
+.card-body {
     padding: 16px;
 }
 
-.card-content h3 {
+.card-title {
     margin-top: 0;
 }
 
-.events-list {
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-footer {
-    background-color: #f2f2f2;
-    padding: 20px;
-    text-align: center;
-}
-
-.hero {
-    background: linear-gradient(rgba(212, 19, 19, 0.5), rgba(0, 0, 0, 0.5)), 
-               url('https://source.unsplash.com/1600x400/?events,meetups') no-repeat center center;
-    background-size: cover;
-    color: white;
-    padding: 50px 0;
-}
-.feature-box {
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
-}
-.feature-box:hover {
-    transform: translateY(-5px);
-}
 .footer-bg {
     background-color: #343a40;
     color: white;

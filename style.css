@@ -6,7 +6,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-}
+    background: linear-gradient(120deg, #ffffff, #009900) !important; /* Light blue background */ !important; /* Light blue background */
 
 header {
     background-color: #f2f2f2;
@@ -86,4 +86,36 @@ nav a.active {
 .footer-bg {
     background-color: #343a40;
     color: white;
+}
+
+/* Carousel Controls (Arrows) */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 6%; /* Wider arrow buttons */
+    height: 6%;
+    background-color: rgba(0, 0, 0, 0.1); /* Subtle background */
+    /* Position adjustments */
+    top: 50%; 
+    transform: translateY(-50%);
+}
+
+/* Ensure arrows stay within carousel bounds */
+.carousel {
+    position: relative;
+}
+
+/* Icon styling */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #0d6efd !important; /* Bold blue */
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+/* Hover effect */
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    background-color: #004d99 !important; /* Darker blue on hover */
 }

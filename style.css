@@ -1,121 +1,240 @@
 /* style.css */
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(120deg, #ffffff, #009900) !important; /* Light blue background */ !important; /* Light blue background */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+    120deg,
+    #ffffff,
+    #009900
+  ); /* Light blue background */
+}
 
 header {
-    background-color: #f2f2f2;
-    padding: 20px;
+  background-color: #f2f2f2;
+  padding: 20px;
 }
 
 header h1 {
-    margin: 0;
+  margin: 0;
 }
 
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
 }
 
 nav li {
-    position: relative;
+  position: relative;
 }
 
 nav a {
-    color: #333;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+  color: #333;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
 nav a:hover {
-    background-color: #4CAF50;
-    color: white;
+  background-color: #4caf50;
+  color: white;
 }
 
 nav a.active {
-    background-color: #4CAF50;
-    color: white;
+  background-color: #4caf50;
+  color: white;
 }
 
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-               url('images/background.avif') no-repeat center center;
-    background-size: cover;
-    color: white;
-    padding: 50px 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("images/background.avif") no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 40px 0; /* Reduced padding for a shorter hero section */
 }
 
 .events-list {
-    padding: 20px;
+  padding: 20px;
+}
+
+.card-deck {
+  margin-top: 20px; /* Add some space above the card deck */
+  margin-bottom: 20px; /* Add some space below the card deck */
 }
 
 .card {
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    max-width: 300px;
-    height: 100%;
+  background: linear-gradient(
+    120deg,
+    #86f88c,
+    #388e3c
+  ); /* Darker green gradient background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 10px; /* Space between cards */
 }
 
 .card img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    max-height: 200px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .card-body {
-    padding: 16px;
+  padding: 16px;
 }
 
 .card-title {
-    margin-top: 0;
+  margin-top: 0;
+  margin-bottom: 10px; /* Add some space below the title */
+}
+
+.event-description {
+  font-size: 0.9rem; /* Smaller font size for event descriptions */
+  color: #555; /* Darker text color for descriptions */
+}
+
+.recommendations {
+  background-color: #8dd3a1; /* Light background color */
+  padding: 20px 0; /* Padding for the section */
+}
+
+.recommendations .card {
+  background-color: rgb(93, 194, 10);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Card shadow */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Hide overflow */
+  margin-bottom: 20px !important; /* Space between cards */
+}
+
+/* Make the recommended events section wider */
+.recommendations .container {
+  max-width: 1200px !important;  /* Increase the max-width of the container */
+  margin: 0 auto; /* Center the container */
+}
+
+.recommendations .row {
+  margin-left: -10px !important; /* Reduce the negative margin to make the cards wider */
+  margin-right: -10px !important;
+}
+
+.recommendations .col-md-6 {
+  padding-left: 10px; /* Reduce the padding between cards */
+  padding-right: 10px;
 }
 
 .footer-bg {
-    background-color: #343a40;
-    color: white;
+  background-color: #343a40;
+  color: white;
+  padding: 20px 0; /* Padding for the footer */
+  margin-top: auto; /* Push the footer to the bottom */
 }
 
 /* Carousel Controls (Arrows) */
 .carousel-control-prev,
 .carousel-control-next {
-    width: 6%; /* Wider arrow buttons */
-    height: 6%;
-    background-color: rgba(0, 0, 0, 0.1); /* Subtle background */
-    /* Position adjustments */
-    top: 50%; 
-    transform: translateY(-50%);
+  position: absolute; /* Position the arrows */
+  transform: translateY(-50%);
+  width: 50px; /* Set the width of the arrows */
+  height: 50px; /* Set the height of the arrows */
+  border-radius: 50%; /* Make the arrows circular */
+  background-color: #0d6efd; /* Bold blue */
+  border: none; /* Remove border */
+  opacity: 0.5; /* Set the initial opacity */
+  transition: opacity 0.3s ease; /* Add a smooth transition */
+  
+  
+
+  
+
 }
 
 /* Ensure arrows stay within carousel bounds */
 .carousel {
-    position: relative;
-}
-
-/* Icon styling */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: #0d6efd !important; /* Bold blue */
-    width: 3rem;
-    height: 3rem;
-    border: 2px solid white;
-    border-radius: 50%;
+  position: relative;
+ 
+  margin: 10 auto;
 }
 
 /* Hover effect */
 .carousel-control-prev:hover .carousel-control-prev-icon,
 .carousel-control-next:hover .carousel-control-next-icon {
-    background-color: #004d99 !important; /* Darker blue on hover */
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Icon styling */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #0d6efd; /* Bold blue */
+  width: 50px;
+  height: 50px;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+/* Hover effect */
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+  background-color: #004d99; /* Darker blue on hover */
+}
+
+.card-img-top {
+  width: 100% !important; /* Set the width of the image */
+  height: 15vw !important; /* Set the height of the image */
+  object-fit: cover;
+}
+
+/* Ensure all carousel images have the same height */
+.carousel-item img {
+  height: 400px; /* Adjust the height as needed */
+  object-fit: cover;
+}
+
+/* Why Choose Us Section */
+.why-choose-us {
+  margin-top: -50px; /* Reduce space before the section */
+}
+
+.why-choose-us .feature-box {
+  height: 100%; /* Ensure all cards are the same height */
+  display: flex; /* Use flexbox layout */
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer-bg {
+  background-color: #343a40; /* Darker background color */
+  color: white; /* Ensure text color is white for contrast */
+  padding: 20px 0; /* Padding for the footer */
+  margin-top: auto; /* Push the footer to the bottom */
+  display: flex; /* Use flexbox layout */
+  justify-content: space-between; /* Space out the columns */
+  align-items: center; /* Vertically center the content */
+}
+
+.footer-motto {
+  margin-bottom: 20px; /* Space between the motto and social media */
+}
+
+.footer-logo img {
+  max-width: 150px; /* Limit the logo size */
+}
+
+.footer-social {
+  display: flex;
+  align-items: center; /* Vertically center the social media icons */
+}
+
+.footer-social a {
+  color: white; /* White color for social media icons */
+  margin: 0 10px; /* Space between social media icons */
+  font-size: 1.5rem; /* Bigger font size for social media icons */
+  text-decoration: none; /* Remove underline */
 }

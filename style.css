@@ -36,6 +36,22 @@ nav a.active {
   color: white;
 }
 
+/* Hero Section */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("images/background.avif") no-repeat center center;
+  background-size: cover;
+  color: white;
+  padding: 100px 0; /* Increased padding for better visual impact */
+  position: relative;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+
 /* Cards */
 .card {
   background: linear-gradient(120deg, #86f88c, #388e3c);

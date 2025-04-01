@@ -127,24 +127,4 @@ document.addEventListener("DOMContentLoaded", function () {
     // Render all events
     renderEvents();
   });
-
-  // Function to get logged in user
-  function getLoggedInUser() {
-    const userJson = localStorage.getItem("loggedInUser");
-    return userJson ? JSON.parse(userJson) : null;
-  }
-
-  // Check if a user is logged in
-  const loggedInUser = getLoggedInUser();
-
-  // Update the navigation bar to show the logged-in user's name
-  function updateNavigationBar() {
-    const welcomeMessage = document.getElementById("welcomeMessage");
-    if (loggedInUser) {
-      welcomeMessage.textContent = `[Welcome ${loggedInUser.firstName}]`;
-    }
-  }
-
-  // Call this function when the page loads
-  updateNavigationBar();
 });

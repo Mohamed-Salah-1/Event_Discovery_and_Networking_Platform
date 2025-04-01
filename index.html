@@ -13,31 +13,31 @@
   </head>
 
   <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
-      <div class="container">
-        <a class="navbar-brand fw-bold" href="index.html">Event Discovery</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="events.html">Events</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="networking.html">Networking</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="feedback.html">Feedback</a>
-            </li>
-          </ul>
-        </div>
+   <!-- Navigation Bar -->
+   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Event Discovery</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="events.html">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="networking.html">Networking</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="feedback.html">Feedback</a>
+          </li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
 
     <!-- Hero Section from home.html -->
     <section class="hero">
@@ -167,49 +167,6 @@
     </div>
 
     <!-- Event Discovery Section -->
-    <section class="event-discovery py-5">
-      <div class="container">
-        <h2 class="text-center mb-4">Discover Events</h2>
-        <form class="row g-3">
-          <div class="col-md-4">
-            <label for="location" class="form-label">Location:</label>
-            <select name="location" id="location" class="form-select">
-              <option value="">Select a location</option>
-              <option value="Riyadh">Riyadh</option>
-              <option value="Jeddah">Jeddah</option>
-              <option value="Dammam">Dammam</option>
-              <option value="Taif">Taif</option>
-              <option value="Yanbua">Yanbua</option>
-              <option value="Abha">Abha</option>
-              <option value="Hail">Hail</option>
-              <option value="Najran">Najran</option>
-            </select>
-          </div>
-          <div class="col-md-4">
-            <label for="interest" class="form-label">Interest:</label>
-            <select id="interest" name="interest" class="form-select">
-              <option value="">Select an interest</option>
-              <option value="technology">Technology</option>
-              <option value="business">Business</option>
-              <option value="arts">Arts</option>
-              <option value="education">Education</option>
-              <option value="riyadh_season">Riyadh Season</option>
-              <option value="Diriyah_season">Diriyah Season</option>
-              <option value="sport">Sport Events</option>
-              <option value="Theater">Theater & Performing Arts</option>
-              <option value="Restaurants">Restaurants</option>
-            </select>
-          </div>
-          <div class="col-md-4">
-            <label for="date" class="form-label">Date:</label>
-            <input type="date" id="date" name="date" class="form-control" />
-          </div>
-          <div class="col-12 text-center mt-3">
-            <button type="submit" class="btn btn-success">Search</button>
-          </div>
-        </form>
-      </div>
-    </section>
 
     <!-- Recommendations Section -->
     <section class="recommendations py-5">
@@ -269,7 +226,10 @@
     <footer class="bg-light text-center py-3">
       <p>&copy; 2025 Event Discovery. All rights reserved.</p>
     </footer>
-
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="auth.js"></script>
+    <!-- <script src="script.js"></script> -->
+    <script src="navbar.js"></script>
   </body>
 </html>

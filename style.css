@@ -137,25 +137,7 @@ nav a.active {
   bottom: 20%;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .carousel-item {
-    height: 300px; /* Smaller height for mobile */
-  }
 
-  .carousel-control-prev {
-    left: 10px; /* Closer to the edge on mobile */
-  }
-
-  .carousel-control-next {
-    right: 10px; /* Closer to the edge on mobile */
-  }
-
-  .carousel-caption {
-    bottom: 10%;
-    padding: 0.5rem; /* Smaller padding for mobile */
-  }
-}
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .carousel-item {
@@ -228,6 +210,49 @@ nav a.active {
 
 .networking-tools .border:hover {
   box-shadow: 0 4px 12px rgba(76, 175, 80, 0.15);
+}
+
+
+/* feedback form */
+#feedbackForm {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.rating label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.rating input {
+  display: none;
+}
+
+.rating label::before {
+  content: "\2605";
+  color: #ddd;
+}
+
+.rating input:checked ~ label::before {
+  color: #fd4;
 }
 
 /* Footer */

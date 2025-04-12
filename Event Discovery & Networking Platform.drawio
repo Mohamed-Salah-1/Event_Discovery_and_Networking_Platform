@@ -55,6 +55,9 @@
         <mxCell id="IhUWwJrpiB_i0VQ-KagD-16" value="Recommended Event 3" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="575" y="350" width="220" height="150" as="geometry" />
         </mxCell>
+        <mxCell id="IhUWwJrpiB_i0VQ-KagD-17" value="Footer" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="600" width="120" height="60" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>

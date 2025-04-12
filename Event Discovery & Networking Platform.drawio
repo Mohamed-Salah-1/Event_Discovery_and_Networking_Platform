@@ -4,23 +4,56 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="M1Bfj3k5ixlPy_hFVzYK-1" value="Home" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="M1Bfj3k5ixlPy_hFVzYK-1" value="Home" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="380" y="28" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="M1Bfj3k5ixlPy_hFVzYK-2" value="Events" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="M1Bfj3k5ixlPy_hFVzYK-2" value="Events" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="460" y="28" width="80" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="M1Bfj3k5ixlPy_hFVzYK-3" value="Networking" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="M1Bfj3k5ixlPy_hFVzYK-3" value="Networking" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="550" y="28" width="80" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="M1Bfj3k5ixlPy_hFVzYK-4" value="Feedback" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="M1Bfj3k5ixlPy_hFVzYK-4" value="Feedback" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="650" y="28" width="70" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="M1Bfj3k5ixlPy_hFVzYK-5" value="Home" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="M1Bfj3k5ixlPy_hFVzYK-5" value="Home" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="380" y="28" width="60" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="M1Bfj3k5ixlPy_hFVzYK-6" value="&lt;span style=&quot;color: rgb(22, 29, 29); font-family: monospace; text-align: left; white-space-collapse: preserve; background-color: rgb(247, 253, 254);&quot;&gt;Event Discovery&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="40" y="30" width="120" height="30" as="geometry" />
+        <mxCell id="M1Bfj3k5ixlPy_hFVzYK-6" value="&lt;span style=&quot;color: rgb(22, 29, 29); font-family: monospace; text-align: left; white-space-collapse: preserve; background-color: rgb(247, 253, 254);&quot;&gt;Event Discovery&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="55" y="30" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="IhUWwJrpiB_i0VQ-KagD-1" value="Search" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.forms.searchBox;strokeColor=#999999;mainText=;strokeColor2=#008cff;fontColor=#666666;fontSize=17;align=left;spacingLeft=3;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="50" y="100" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="IhUWwJrpiB_i0VQ-KagD-2" value="Recommended Events" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="250" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="IhUWwJrpiB_i0VQ-KagD-7" value="Location" style="fillColor=none;strokeColor=none;html=1;fontSize=11;fontStyle=0;align=left;fontColor=#596780;fontStyle=1;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="40" y="150" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IhUWwJrpiB_i0VQ-KagD-8" value="City" style="rounded=1;arcSize=9;align=left;spacingLeft=5;strokeColor=#4C9AFF;html=1;strokeWidth=2;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="40" y="170" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="IhUWwJrpiB_i0VQ-KagD-9" value="Interest" style="rounded=1;arcSize=9;align=left;spacingLeft=5;strokeColor=#4C9AFF;html=1;strokeWidth=2;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="230" y="170" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="IhUWwJrpiB_i0VQ-KagD-10" value="Interest" style="fillColor=none;strokeColor=none;html=1;fontSize=11;fontStyle=0;align=left;fontColor=#596780;fontStyle=1;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="230" y="150" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IhUWwJrpiB_i0VQ-KagD-11" value="Date" style="rounded=1;arcSize=9;align=left;spacingLeft=5;strokeColor=#4C9AFF;html=1;strokeWidth=2;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="419" y="170" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="IhUWwJrpiB_i0VQ-KagD-12" value="Date" style="fillColor=none;strokeColor=none;html=1;fontSize=11;fontStyle=0;align=left;fontColor=#596780;fontStyle=1;fontSize=11" vertex="1" parent="1">
+          <mxGeometry x="419" y="150" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="IhUWwJrpiB_i0VQ-KagD-14" value="Recommended Event 1" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="350" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="IhUWwJrpiB_i0VQ-KagD-15" value="Recommended Event 2" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="315" y="350" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="IhUWwJrpiB_i0VQ-KagD-16" value="Recommended Event 3" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="575" y="350" width="220" height="150" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

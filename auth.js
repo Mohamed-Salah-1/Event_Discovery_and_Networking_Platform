@@ -117,3 +117,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Simulate a function that checks if the user is logged in
+  function isUserLoggedIn() {
+      // Replace this with your actual logic to check if the user is logged in
+      return true; // Assume the user is logged in for demonstration
+  }
+
+  if (isUserLoggedIn()) {
+      document.getElementById("signUpButton").style.display = "none";
+      document.getElementById("logInButton").style.display = "none";
+  }
+});

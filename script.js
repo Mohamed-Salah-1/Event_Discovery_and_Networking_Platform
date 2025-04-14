@@ -5,18 +5,20 @@ document.addEventListener("DOMContentLoaded", function () {
       location: "Riyadh",
       interest: "Sports",
       date: "18/04/2025",
-      description: "Excitement is growing as the Kingdom gears up to host ...",
+      description: "Excitement is in the air as the Saudi Arabian Grand Prix returns to Jeddah Corniche Circuit.",
       image: "images/Saudi_Arabian_Grand_Prix_2025.jpg",
-      link: "events/saudi_arabian_grand_prix_2025.html",
+      link: "https://tickets.saudiarabiangp.com/?utm_source=sem&utm_medium=zmkn&utm_campaign=en&gad_source=1&gclid=CjwKCAjw5PK_BhBBEiwAL7GTPSSdo9inmL5VhrhvV0T0oWtmhWYgWUqgZkuAPTGEe7aNpoPwpo-DvBoC1I8QAvD_BwE",
+      ticketPrice: 300, // Added ticket price
     },
     {
       title: "Riyadh Racing Season Race Night",
       location: "Riyadh",
       interest: "Sports",
-      date: "13/05/2025",
-      description: "A race night at King Abdulaziz Racecourse is an evening like no other...",
-      image: "images/Riyadh Racing Season Race Night.jpg",
-      link: "events/riyadh_racing_season_race_night.html",
+      date: "18/01/2025",
+      description: "A race night at King Abdulaziz Racecourse is an evening like no other.",
+      image: "https://images.ctfassets.net/vy53kjqs34an/3wQMX7ZkHM4UF0q9mSNhY6/6e4d60fcbb1ee17959a22e2f84e55f8b/v.jpg",
+      link: "https://webook.com/en/events/riyadh-racing-season-rsace-night-42",
+      ticketPrice: 20 // Added ticket price
     },
     {
       title: "English Club",
@@ -26,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
       description: "The yearly English Club event.",
       image: "images/English_Club.jpg",
       link: "events/english_club.html",
+      ticketPrice: 50, // Added ticket price
     },
     {
       title: "Arab Music Concert",
@@ -35,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
       description: "A Concert in Dammam for Arab Music lovers and artists.",
       image: "images/Arab Music Concert.jpg",
       link: "events/arab_music_concert.html",
+      ticketPrice: 100, // Added ticket price
     },
     {
       title: "Ai Discovery Conference",
@@ -44,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
       image: "images/what-is-ai-artificial-intelligence.webp",
       link: "events/Ai_Discovery_Conference.html",
+      ticketPrice: 300, // Added ticket price
     },
   ];
 
@@ -75,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             <strong>Date:</strong> ${event.date}<br>
                             <strong>Location:</strong> ${event.location}<br>
                             <strong>Interest:</strong> ${event.interest}<br>
+                            <strong>Ticket Price:</strong> ${event.ticketPrice} SAR<br> <!-- Added ticket price -->
                             <strong>Description:</strong> ${event.description}
                         </p>
                     </div>

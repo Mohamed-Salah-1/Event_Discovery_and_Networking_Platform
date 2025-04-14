@@ -110,7 +110,7 @@
               <div class="card-body">
                 <h5 class="card-title">Startup Founders Mixer</h5>
                 <p class="card-text">Connect with tech entrepreneurs and investors. March 15, Riyadh.</p>
-                <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#eventFormModal">Join Event</a>
+                <a href="#" class="btn btn-outline-primary join-event-btn" data-bs-toggle="modal" data-bs-target="#eventFormModal" data-event-name="Startup Founders Mixer">Join Event</a>
               </div>
             </div>
           </div>
@@ -120,7 +120,7 @@
               <div class="card-body">
                 <h5 class="card-title">Creative Professionals Workshop</h5>
                 <p class="card-text">Collaborate with designers & content creators. March 20, Jeddah.</p>
-                <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#eventFormModal">Join Event</a>
+                <a href="#" class="btn btn-outline-primary join-event-btn" data-bs-toggle="modal" data-bs-target="#eventFormModal" data-event-name="Creative Professionals Workshop">Join Event</a>
               </div>
             </div>
           </div>
@@ -130,7 +130,7 @@
               <div class="card-body">
                 <h5 class="card-title">Tech Industry Night</h5>
                 <p class="card-text">Network with SaaS leaders and developers. March 25, Dammam.</p>
-                <a href="#" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#eventFormModal">Join Event</a>
+                <a href="#" class="btn btn-outline-primary join-event-btn" data-bs-toggle="modal" data-bs-target="#eventFormModal" data-event-name="Tech Industry Night">Join Event</a>
               </div>
             </div>
           </div>
@@ -189,7 +189,7 @@
               <i class="bi bi-lightbulb fs-1 text-warning"></i>
               <h4 class="my-3">Conversation Starters</h4>
               <p>Access our library of industry-specific icebreaker questions.</p>
-              <a href="#" class="btn btn-link">Explore →</a>
+              <a href="conversation_starters.html" class="btn btn-link">Explore →</a>
             </div>
           </div>
           <div class="col-md-4">
@@ -248,12 +248,7 @@
               </div>
               <div class="mb-3">
                 <label class="form-label">Event Name</label>
-                <select class="form-select" required>
-                  <option value="">Select Event</option>
-                  <option>Startup Founders Mixer</option>
-                  <option>Creative Professionals Workshop</option>
-                  <option>Tech Industry Night</option>
-                </select>
+                <input type="text" class="form-control" id="eventNameInput" readonly />
               </div>
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
@@ -271,5 +266,7 @@
     <script src="script.js"></script>
     <script src="auth.js"></script>
     <script src="navbar.js"></script>
+    <script src="networking.js"></script>
+    
   </body>
 </html>

@@ -16,5 +16,11 @@
     "name": "Mohammed Al-Farsi",
     "rating": "5",
     "comments": "Excellent conference with insightful speakers and valuable networking opportunities."
+  },
+  {
+    "event": "Arab Music Concert",
+    "name": "Mona Al Saadi",
+    "rating": "1",
+    "comments": "The Place was too crowded and the sound quality was poor. I expected much more from this event."
   }
 ]

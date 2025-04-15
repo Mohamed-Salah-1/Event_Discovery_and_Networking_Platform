@@ -67,7 +67,6 @@ nav a.active {
   margin: 0 auto;
 }
 
-
 /* Why Choose Us Section */
 .why-choose-us {
   background-color: #e8f5e9; /* Light green background */
@@ -182,7 +181,6 @@ nav a.active {
   bottom: 20%;
 }
 
-
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .carousel-item {
@@ -257,7 +255,6 @@ nav a.active {
   box-shadow: 0 4px 12px rgba(76, 175, 80, 0.15);
 }
 
-
 /* feedback form */
 #feedbackForm {
   max-width: 600px;
@@ -276,7 +273,8 @@ label {
   margin-bottom: 5px;
 }
 
-input, textarea {
+input,
+textarea {
   width: 100%;
   padding: 8px;
   box-sizing: border-box;
@@ -298,6 +296,20 @@ input, textarea {
 
 .rating input:checked ~ label::before {
   color: #fd4;
+}
+
+/* Feedback Section */
+.user-name {
+  background-color: #f8f9fa; /* Lighter background color */
+  font-family: "Georgia", serif; /* Nicer font for user name */
+  font-style: italic;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Rating Stars */
+.rating-stars {
+  color: #ffc107; /* Gold color for stars */
 }
 
 /* Footer */

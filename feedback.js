@@ -56,40 +56,78 @@ document.addEventListener("DOMContentLoaded", function () {
         name: nameInput.value,
         rating: document.querySelector('input[name="rating"]:checked')?.value || "",
         comments: document.getElementById("comments").value,
+        timestamp: new Date().toISOString(),
       };
 
       // Validate form data
-      if (!formData.event || !formData.name || !formData.rating) {
-        alert("Please fill in all required fields (event, name, and rating)");
+      if (!formData.event || !formData.name || !formData.rating || !formData.comments) {
+        alert("Please fill in all required fields");
         return;
       }
 
-      // Here you would typically send this data to your server
-      console.log("Feedback submitted:", formData);
+      // Save feedback to localStorage
+      saveFeedbackToLocalStorage(formData);
 
-      // For demo purposes, save to localStorage
-      saveFeedback(formData);
-
-      // Show success message
-      alert("Thank you for your feedback! Your response has been sent for review.");
+      // Show updated success message
+      alert("Thank you for your feedback! Your response has been sent for admin verification and will be posted soon.");
 
       // Reset form
       feedbackForm.reset();
     });
   }
 
-  function saveFeedback(feedback) {
+  // Function to save feedback to localStorage
+  function saveFeedbackToLocalStorage(feedback) {
     // Get existing feedback or initialize empty array
     const savedFeedback = JSON.parse(localStorage.getItem("eventFeedback") || "[]");
 
-    // Add new feedback with timestamp
-    savedFeedback.push({
-      ...feedback,
-      timestamp: new Date().toISOString(),
-    });
+    // Add new feedback
+    savedFeedback.push(feedback);
 
     // Save back to localStorage
     localStorage.setItem("eventFeedback", JSON.stringify(savedFeedback));
+
+    // Refresh the feedback display
+    displayFeedback();
+  }
+
+  // Function to convert rating to stars
+  function ratingToStars(rating) {
+    const stars = "⭐".repeat(rating);
+    return stars;
+  }
+
+  // Function to display feedback from feedback_data.json
+  function displayFeedback() {
+    fetch("feedback_data.json")
+      .then((response) => response.json())
+      .then((feedbackData) => {
+        const feedbackContainer = document.querySelector("#feedbackContainer");
+        feedbackContainer.innerHTML = ""; // Clear existing items
+
+        feedbackData.forEach((feedback) => {
+          const feedbackItem = document.createElement("div");
+          feedbackItem.className = "card mb-3";
+
+          feedbackItem.innerHTML = `
+            <div class="card-body">
+              <h5 class="card-title">${feedback.event}</h5>
+              <p class="card-text">
+                <strong>Rating:</strong> ${ratingToStars(parseInt(feedback.rating))}<br>
+                <strong>Comment:</strong> ${feedback.comments}
+              </p>
+              <footer class="blockquote-footer user-name">
+                ${feedback.name}
+              </footer>
+            </div>
+          `;
+
+          feedbackContainer.appendChild(feedbackItem);
+        });
+      })
+      .catch((error) => {
+        console.error("Error loading feedback:", error);
+      });
   }
 
   // Add rating label text update
@@ -109,4 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ratingText.textContent = ratingLabels[this.value];
     });
   });
+
+  // Initial display of feedback
+  displayFeedback();
 });

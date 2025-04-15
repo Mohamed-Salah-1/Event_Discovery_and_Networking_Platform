@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
       description: "Excitement is in the air as the Saudi Arabian Grand Prix returns to Jeddah Corniche Circuit.",
       image: "images/Saudi_Arabian_Grand_Prix_2025.jpg",
       link: "https://tickets.saudiarabiangp.com/?utm_source=sem&utm_medium=zmkn&utm_campaign=en&gad_source=1&gclid=CjwKCAjw5PK_BhBBEiwAL7GTPSSdo9inmL5VhrhvV0T0oWtmhWYgWUqgZkuAPTGEe7aNpoPwpo-DvBoC1I8QAvD_BwE",
-      ticketPrice: 300, // Added ticket price
+      ticketPrice: 300, 
     },
     {
       title: "Riyadh Racing Season Race Night",
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
       description: "A race night at King Abdulaziz Racecourse is an evening like no other.",
       image: "https://images.ctfassets.net/vy53kjqs34an/3wQMX7ZkHM4UF0q9mSNhY6/6e4d60fcbb1ee17959a22e2f84e55f8b/v.jpg",
       link: "https://webook.com/en/events/riyadh-racing-season-rsace-night-42",
-      ticketPrice: 20 // Added ticket price
+      ticketPrice: 20 
     },
     {
       title: "English Club",

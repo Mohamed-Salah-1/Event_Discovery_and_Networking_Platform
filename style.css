@@ -375,3 +375,63 @@ footer p {
   margin: 0;
   text-align: center;
 }
+
+/* Admin Dashboard Styles */
+#admin-dashboard {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  padding: 32px 24px;
+}
+#admin-dashboard section {
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+#admin-dashboard h2 {
+  color: #009900;
+  margin-bottom: 12px;
+}
+#admin-dashboard button {
+  background: #009900;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 16px;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#admin-dashboard button:hover {
+  background: #007700;
+}
+#admin-login-section {
+  max-width: 400px;
+  margin: 60px auto 0 auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  padding: 32px 24px;
+  text-align: center;
+}
+#admin-login-section input[type="password"] {
+  width: 70%;
+  padding: 8px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+#admin-login-section button {
+  background: #009900;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+#admin-login-section button:hover {
+  background: #007700;
+}

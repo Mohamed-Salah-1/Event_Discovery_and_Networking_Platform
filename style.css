@@ -10,6 +10,11 @@ body {
 }
 
 /* Navigation */
+.navbar-logo {
+  height: 40px;
+  width: auto;
+}
+
 nav ul {
   list-style-type: none;
   margin: 0;
@@ -116,7 +121,7 @@ nav a.active {
   max-width: 1200px;
   margin: 2rem auto;
   position: relative;
-  overflow: visible; /* Ensure arrows are visible */
+  overflow: visible;
 }
 
 .carousel-inner {
@@ -125,79 +130,89 @@ nav a.active {
 }
 
 .carousel-item {
-  height: 400px; /* Fixed height for all slides */
-
+  height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .carousel-inner img {
-  height: 500px; /* Set a fixed height for the carousel images */
-  object-fit: cover; /* Ensure the image covers the entire area without distortion */
-  width: 100%; /* Ensure the image takes the full width of the carousel */
+  height: 500px;
+  object-fit: cover;
+  width: 100%;
 }
 
 .carousel-control-prev,
 .carousel-control-next {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   background-color: rgba(76, 175, 80, 0.9);
   border-radius: 50%;
+  position: absolute;
   top: 50%;
-  transform: translateY(-50%); /* Vertically center the arrows */
-  opacity: 2;
+  transform: translateY(-50%);
+  opacity: 1;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1; /* Ensure arrows are above the carousel */
+  z-index: 10;
 }
 
 .carousel-control-prev {
-  left: 30px; /* Adjusted spacing */
+  left: -25px;
 }
 
 .carousel-control-next {
-  right: 30px; /* Adjusted spacing */
+  right: -25px;
 }
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
   background-color: rgba(76, 175, 80, 1);
-  transform: translateY(-50%) scale(1.1); /* Hover effect */
+  transform: translateY(-50%) scale(1.1);
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
+  filter: brightness(0) invert(1);
 }
 
 .carousel-caption {
   background: rgba(0, 0, 0, 0.6);
   border-radius: 8px;
-  padding: 10rem;
+  padding: 2rem;
   bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 800px;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .carousel-item {
-    height: 300px; /* Smaller height for mobile */
+    height: 300px;
+  }
+
+  .carousel-inner img {
+    height: 300px;
   }
 
   .carousel-control-prev {
-    left: -30px; /* Adjusted spacing for mobile */
+    left: 10px;
   }
 
   .carousel-control-next {
-    right: -30px; /* Adjusted spacing for mobile */
+    right: 10px;
   }
 
   .carousel-caption {
     bottom: 10%;
-    padding: 0.5rem; /* Smaller padding for mobile */
+    padding: 1rem;
+    width: 90%;
   }
 }
 

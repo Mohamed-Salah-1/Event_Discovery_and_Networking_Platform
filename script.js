@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
       interest: "Sports",
       date: "18/01/2025",
       description: "A race night at King Abdulaziz Racecourse is an evening like no other.",
-      image: "https://images.ctfassets.net/vy53kjqs34an/3wQMX7ZkHM4UF0q9mSNhY6/6e4d60fcbb1ee17959a22e2f84e55f8b/v.jpg",
+      image: "images/Riyadh Racing Season Race Night.jpg",
       link: "https://webook.com/en/events/riyadh-racing-season-rsace-night-42",
       ticketPrice: 20 
     },
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
       description: "The yearly English Club event.",
       image: "images/English_Club.jpg",
       link: "events/english_club.html",
-      ticketPrice: 50, // Added ticket price
+      ticketPrice: 0o0, // Added ticket price
     },
     {
       title: "Arab Music Concert",
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
       description: "A Concert in Dammam for Arab Music lovers and artists.",
       image: "images/Arab Music Concert.jpg",
       link: "events/arab_music_concert.html",
-      ticketPrice: 100, // Added ticket price
+      ticketPrice: 0o0, // Added ticket price
     },
     {
       title: "Ai Discovery Conference",
@@ -46,9 +46,9 @@ document.addEventListener("DOMContentLoaded", function () {
       interest: "Technology",
       date: "04/04/2025",
       description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      image: "images/what-is-ai-artificial-intelligence.webp",
+      image: "images/ai discovery.jpg",
       link: "events/Ai_Discovery_Conference.html",
-      ticketPrice: 300, // Added ticket price
+      ticketPrice: 0o0, // Added ticket price
     },
   ];
 

@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
       link: "events/Ai_Discovery_Conference.html",
       ticketPrice: 0o0, // Added ticket price
     },
+    
   ];
 
   // Export the events array to the global window object

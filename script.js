@@ -1,98 +1,91 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const events = [
-    {
-      title: "Saudi Arabian Grand Prix 2025",
-      location: "Riyadh",
-      interest: "Sports",
-      date: "18/04/2025",
-      description: "Excitement is in the air as the Saudi Arabian Grand Prix returns to Jeddah Corniche Circuit.",
-      image: "images/Saudi_Arabian_Grand_Prix_2025.jpg",
-      link: "https://tickets.saudiarabiangp.com/?utm_source=sem&utm_medium=zmkn&utm_campaign=en&gad_source=1&gclid=CjwKCAjw5PK_BhBBEiwAL7GTPSSdo9inmL5VhrhvV0T0oWtmhWYgWUqgZkuAPTGEe7aNpoPwpo-DvBoC1I8QAvD_BwE",
-      ticketPrice: 300,
-    },
-    {
-      title: "Riyadh Racing Season Race Night",
-      location: "Riyadh",
-      interest: "Sports",
-      date: "18/01/2025",
-      description: "A race night at King Abdulaziz Racecourse is an evening like no other.",
-      image: "images/Riyadh Racing Season Race Night.jpg",
-      link: "https://webook.com/en/events/riyadh-racing-season-rsace-night-42",
-      ticketPrice: 20,
-    },
-    {
-      title: "English Club",
-      location: "Khafji",
-      interest: "Education",
-      date: "03/06/2025",
-      description: "The yearly English Club event.",
-      image: "images/English_Club.jpg",
-      link: "events/english_club.html",
-      ticketPrice: 0o0, // Added ticket price
-    },
-    {
-      title: "Arab Music Concert",
-      location: "Dammam",
-      interest: "Music",
-      date: "31/03/2025", // Ensure this date is correct
-      description: "A Concert in Dammam for Arab Music lovers and artists.",
-      image: "images/Arab Music Concert.jpg",
-      link: "events/arab_music_concert.html",
-      ticketPrice: 0o0, // Added ticket price
-    },
-    {
-      title: "Ai Discovery Conference",
-      location: "Jeddah",
-      interest: "Technology",
-      date: "04/04/2025",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-      image: "images/ai discovery.jpg",
-      link: "events/Ai_Discovery_Conference.html",
-      ticketPrice: 0o0, // Added ticket price
-    },
-    
-  ];
-
-  // Export the events array to the global window object
-  window.events = events;
-
-  // Resolve a promise when events are ready
-  window.eventsReady = new Promise((resolve) => {
-    resolve(events);
-  });
+  // Function to fetch events from the server
+  async function fetchEvents() {
+    try {
+      const response = await fetch("/api/events");
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return await response.json();
+    } catch (error) {
+      console.error("There was a problem with the fetch operation:", error);
+      return [];
+    }
+  }
 
   // Function to render events
-  function renderEvents(filteredEvents = events) {
+  function renderEvents(eventsToRender) {
     const eventsContainer = document.getElementById("eventsContainer");
+    if (!eventsContainer) return;
+
     eventsContainer.innerHTML = "";
-    filteredEvents.forEach((event) => {
+
+    if (eventsToRender.length === 0) {
+      eventsContainer.innerHTML = "<p>No events found.</p>";
+      return;
+    }
+
+    eventsToRender.forEach((event) => {
       const eventCard = document.createElement("div");
       eventCard.className = "col-md-6 col-lg-4 mb-4";
       eventCard.innerHTML = `
-                <div class="card h-100">
-                    <a href="${event.link}">
-                        <img src="${event.image}" alt="${event.title}" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">${event.title}</h5>
-                        </div>
-                    </a>
-                    <div class="card-body">
-                        <p class="card-text">
-                            <strong>Date:</strong> ${event.date}<br>
-                            <strong>Location:</strong> ${event.location}<br>
-                            <strong>Interest:</strong> ${event.interest}<br>
-                            <strong>Ticket Price:</strong> ${event.ticketPrice} SAR<br> <!-- Added ticket price -->
-                            <strong>Description:</strong> ${event.description}
-                        </p>
-                    </div>
-                </div>
-            `;
+        <div class="card h-100">
+          <a href="${event.link}">
+            <img src="${event.image}" alt="${event.title}" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">${event.title}</h5>
+            </div>
+          </a>
+          <div class="card-body">
+            <p class="card-text">
+              <strong>Date:</strong> ${event.date}<br>
+              <strong>Location:</strong> ${event.location}<br>
+              <strong>Interest:</strong> ${event.interest}<br>
+              <strong>Ticket Price:</strong> ${event.ticketPrice === 0 ? 'Free' : `${event.ticketPrice} SAR`}<br>
+              <strong>Description:</strong> ${event.description}
+            </p>
+          </div>
+        </div>
+      `;
       eventsContainer.appendChild(eventCard);
     });
   }
 
+  // Function to filter events
+  function filterEvents() {
+    const location = document.getElementById("location").value;
+    const interest = document.getElementById("interest").value;
+    const month = document.getElementById("month").value;
+
+    fetchEvents()
+      .then((events) => {
+        const filteredEvents = events.filter((event) => {
+          const [day, monthStr, year] = event.date.split("/");
+          const eventDate = new Date(year, monthStr - 1, day);
+          const eventMonthYear = `${year}-${String(monthStr).padStart(2, "0")}`;
+
+          const locationMatch = location ? event.location === location : true;
+          const interestMatch = interest ? event.interest === interest : true;
+          const monthMatch = month ? eventMonthYear === month : true;
+
+          return locationMatch && interestMatch && monthMatch;
+        });
+
+        renderEvents(filteredEvents);
+      })
+      .catch((error) => {
+        console.error("Error filtering events:", error);
+      });
+  }
+
   // Initial render of events
-  renderEvents();
+  fetchEvents()
+    .then((events) => {
+      renderEvents(events);
+    })
+    .catch((error) => {
+      console.error("Error loading initial events:", error);
+    });
 
   // Handle form submission
   const form = document.getElementById("eventSearchForm");
@@ -100,38 +93,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-
-    const location = document.getElementById("location").value;
-    const interest = document.getElementById("interest").value;
-    const month = document.getElementById("month").value;
-
-    // Filter events based on search criteria
-    const filteredEvents = events.filter((event) => {
-      // Parse the event date correctly (DD/MM/YYYY)
-      const [day, monthStr, year] = event.date.split("/");
-      const eventDate = new Date(year, monthStr - 1, day); // JavaScript months are 0-based
-      const eventMonthYear = `${year}-${String(monthStr).padStart(2, "0")}`;
-
-      const locationMatch = location ? event.location === location : true;
-      const interestMatch = interest ? event.interest === interest : true;
-      const monthMatch = month ? eventMonthYear === month : true;
-
-      return locationMatch && interestMatch && monthMatch;
-    });
-
-    console.log("Filtered Events:", filteredEvents);
-
-    renderEvents(filteredEvents);
+    filterEvents();
   });
 
   // Clear search functionality
   clearButton.addEventListener("click", function () {
-    // Reset form fields
     document.getElementById("location").value = "";
     document.getElementById("interest").value = "";
     document.getElementById("month").value = "";
 
-    // Render all events
-    renderEvents();
+    fetchEvents()
+      .then((events) => {
+        renderEvents(events);
+      })
+      .catch((error) => {
+        console.error("Error resetting events:", error);
+      });
   });
 });

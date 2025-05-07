@@ -9,27 +9,46 @@ document.addEventListener("DOMContentLoaded", function () {
     return userJson ? JSON.parse(userJson) : null;
   }
 
+  // Function to fetch events from the server
+  async function fetchEvents() {
+    try {
+      const response = await fetch("/api/events");
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return await response.json();
+    } catch (error) {
+      console.error("There was a problem with the fetch operation:", error);
+      return [];
+    }
+  }
+
+  // Function to populate event dropdown from the server
+  async function populateEventDropdown() {
+    try {
+      const events = await fetchEvents();
+      // Clear existing options except the default one
+      while (eventSelect.options.length > 1) {
+        eventSelect.remove(1);
+      }
+
+      events.forEach((event) => {
+        const option = document.createElement("option");
+        option.value = event.title;
+        option.textContent = event.title;
+        eventSelect.appendChild(option);
+      });
+    } catch (error) {
+      console.error("Error populating event dropdown:", error);
+    }
+  }
+
   // Check if a user is logged in
   const loggedInUser = getLoggedInUser();
 
-  // Function to populate event dropdown from the events array
-  function populateEventDropdown(events) {
-    // Clear existing options except the default one
-    while (eventSelect.options.length > 1) {
-      eventSelect.remove(1);
-    }
-
-    events.forEach((event) => {
-      const option = document.createElement("option");
-      option.value = event.title;
-      option.textContent = event.title;
-      eventSelect.appendChild(option);
-    });
-  }
-
-  // Wait for the events to be ready
-  window.eventsReady.then((events) => {
-    populateEventDropdown(events);
+  // Populate event dropdown and update form based on login status
+  fetchEvents().then((events) => {
+    populateEventDropdown();
 
     // If user is logged in, set their name in the form
     if (loggedInUser) {
@@ -65,30 +84,38 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      // Save feedback to localStorage
-      saveFeedbackToLocalStorage(formData);
-
-      // Show updated success message
-      alert("Thank you for your feedback! Your response has been sent for admin verification and will be posted soon.");
-
-      // Reset form
-      feedbackForm.reset();
+      // Save feedback to the server
+      saveFeedbackToServer(formData);
     });
   }
 
-  // Function to save feedback to localStorage
-  function saveFeedbackToLocalStorage(feedback) {
-    // Get existing feedback or initialize empty array
-    const savedFeedback = JSON.parse(localStorage.getItem("eventFeedback") || "[]");
+  // Function to save feedback to the server
+  function saveFeedbackToServer(feedback) {
+    fetch("/api/feedback", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(feedback),
+    })
+      .then((response) => response.text())
+      .then((responseText) => {
+        if (responseText === "Feedback saved successfully") {
+          // Show updated success message
+          alert(
+            "Thank you for your feedback! Your response has been sent for admin verification and will be posted soon."
+          );
 
-    // Add new feedback
-    savedFeedback.push(feedback);
-
-    // Save back to localStorage
-    localStorage.setItem("eventFeedback", JSON.stringify(savedFeedback));
-
-    // Refresh the feedback display
-    displayFeedback();
+          // Reset form
+          feedbackForm.reset();
+        } else {
+          alert("Failed to save feedback. Please try again.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error saving feedback:", error);
+        alert("Error saving feedback. Please try again.");
+      });
   }
 
   // Function to convert rating to stars
@@ -97,15 +124,18 @@ document.addEventListener("DOMContentLoaded", function () {
     return stars;
   }
 
-  // Function to display feedback from feedback_data.json
+  // Function to display feedback from the server
   function displayFeedback() {
-    fetch("feedback_data.json")
+    fetch("/api/feedback")
       .then((response) => response.json())
       .then((feedbackData) => {
+        const filteredFeedback = feedbackData.filter(
+          (feedback) => feedback.approved === true
+        );
         const feedbackContainer = document.querySelector("#feedbackContainer");
         feedbackContainer.innerHTML = ""; // Clear existing items
 
-        feedbackData.forEach((feedback) => {
+        filteredFeedback.forEach((feedback) => {
           const feedbackItem = document.createElement("div");
           feedbackItem.className = "card mb-3";
 
